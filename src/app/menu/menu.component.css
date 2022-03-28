@@ -1,0 +1,49 @@
+.bg-menu {
+
+  background: #db8ef7;
+
+}
+
+.btn-menu {
+
+  background: #a023da;
+
+}
+
+.text-menu {
+
+  font-size: 25px;
+  color: #FFFFFF;
+
+}
+
+.display-menu {
+
+  display: flex;
+  flex-flow: row;
+  justify-content: right;
+}
+
+.display-menu li {
+
+  margin-left: 13px;
+
+}
+
+@media screen and (max-width: 992px) {
+
+
+  .display-menu {
+
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  .display-menu li {
+
+    margin-left: 13px;
+    text-align: center;
+
+  }
+
+}

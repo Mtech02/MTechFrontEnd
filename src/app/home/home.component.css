@@ -1,0 +1,47 @@
+@keyframes changeBackgroundColor {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+.bg-home{
+
+    background: linear-gradient(45deg, #efcaff 0%, #c8a3f5 100%);
+    background-size: 300% 300%;
+    animation: changeBackgroundColor 15s ease infinite;
+
+}
+
+.paragrafo{
+
+    margin-top: 40%;
+
+}
+
+.padding-bottom{
+
+    padding-bottom: 11.9%;
+
+}
+
+.btn-home{
+
+    background: linear-gradient(135deg, rgba(176, 106, 252, 1) 39%, rgba(116, 17, 255, 1) 101%);
+    border: none;
+    border-radius: 50px;
+
+}
+
+.btn-login{
+
+    font-size: 20px;
+
+}
