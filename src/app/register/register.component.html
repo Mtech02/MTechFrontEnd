@@ -19,17 +19,31 @@
                   </div>
                 </div>
                 <form class="myform">
-                  <div class="form-group"> <input type="name" class="form-control" placeholder="Nome"> </div>
-                  <div class="form-group"> <input type="email" class="form-control" placeholder="Email"> </div>
-                  <div class="form-group"> <input type="password" class="form-control" placeholder="Senha"> </div>
-                  <div class="form-group"> <input type="password" class="form-control" placeholder="Confirme sua Senha">
+                  <div class="form-group"> <input [(ngModel)]="user.name" type="name" name="name" class="form-control"
+                      placeholder="Nome"> </div>
+                  <div class="form-group"> <input [(ngModel)]="user.email" type="email" name="email"class="form-control"
+                      placeholder="Email"> </div>
+                  <div class="form-group"> <input type="password"(input)="confirmePassword($event)"  class="form-control" placeholder="Senha"> </div>
+                  <div class="form-group"> <input [(ngModel)]="user.password" type="password" name="password" class="form-control"
+                      placeholder="Confirme sua Senha">
                   </div>
-                  <div class="form-group"> <input type="photo" class="form-control" placeholder="Foto"> </div>
+                  <div class="form-group"> <input [(ngModel)]="user.photo" type="photo" name="photo" class="form-control"
+                      placeholder="Foto"> </div>
                   <div class="btn-flex">
-                    <div class="form-group mt-3"> <button type="button"
-                        class="btn btn-cancel btn-lg btn-register" routerLink="/login">Cancelar</button></div>
-                    <div class="form-group mt-3"> <button type="button"
-                        class="btn btn-primary btn-lg btn-register">Inscreva-se</button></div>
+
+                    <div class="form-group mt-2">
+                      <select class="form-control form-style" (change)="typeUser($event)">
+                        <option value="">Selecione tipo de usuárie</option>
+                        <option value="normal">Empresa</option>
+                        <option value="normal">Usuária</option>
+                      </select>
+                      <i class="input-icon uil uil-lock-alt"></i>
+                    </div>
+
+                    <div class="form-group mt-3"> <button type="button" class="btn btn-cancel btn-lg btn-register"
+                        routerLink="/login">Cancelar</button></div>
+                    <div class="form-group mt-3"> <button type="button" class="btn btn-primary btn-lg btn-register"
+                        (click)="register()">Inscreva-se</button></div>
                   </div>
                 </form>
               </div>
