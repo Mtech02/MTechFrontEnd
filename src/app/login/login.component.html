@@ -21,10 +21,10 @@
                   </div>
                 </div>
                 <form class="myform">
-                  <div class="form-group"> <input type="email" class="form-control" placeholder="Email"> </div>
-                  <div class="form-group"> <input type="password" class="form-control" placeholder="Senha">
+                  <div class="form-group"> <input [(ngModel)]="userLogin.email" type="email" class="form-control" name="email" placeholder="Email" autocomplete="off"> </div>
+                  <div class="form-group"> <input [(ngModel)]="userLogin.password" type="password" class="form-control" name="password" placeholder="Senha" autocomplete="off">
                   </div>
-                  <div class="form-group mt-3 text-center"> <button type="button"
+                  <div class="form-group mt-3 text-center"> <button type="button" (click)="login()"
                       class="btn btn-block btn-primary btn-lg">Entrar</button>
                     <hr class="line l">
                     <p>Não tem uma conta?</p>
