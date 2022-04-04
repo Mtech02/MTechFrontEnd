@@ -1,81 +1,21 @@
-.card {
-    width: 350px;
-    background-color: #efefef;
-    border: none;
-    cursor: pointer;
-    transition: all 0.5s
+.profile-navbar .nav-item .nav-link {
+  color: #6c7293;
 }
 
-.image img {
-    transition: all 0.5s
+.profile-navbar .nav-item .nav-link.active {
+  color: #464dee;
 }
 
-.card:hover .image img {
-    transform: scale(1.5)
+.profile-navbar .nav-item .nav-link i {
+  font-size: 1.25rem;
 }
 
-.btn {
-    height: 140px;
-    width: 140px;
-    border-radius: 50%
+.profile-feed-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e9e9e9;
 }
 
-.name {
-    font-size: 22px;
-    font-weight: bold
+.img-sm {
+  width: 43px;
+  height: 43px;
 }
-
-.idd {
-    font-size: 14px;
-    font-weight: 600
-}
-
-.idd1 {
-    font-size: 12px
-}
-
-.number {
-    font-size: 22px;
-    font-weight: bold
-}
-
-.follow {
-    font-size: 12px;
-    font-weight: 500;
-    color: #444444
-}
-
-.btn1 {
-    height: 40px;
-    width: 150px;
-    border: none;
-    background-color: #000;
-    color: #aeaeae;
-    font-size: 15px
-}
-
-.text span {
-    font-size: 13px;
-    color: #545454;
-    font-weight: 500
-}
-
-.icons i {
-    font-size: 19px
-}
-
-hr .new1 {
-    border: 1px solid
-}
-
-.join {
-    font-size: 14px;
-    color: #a0a0a0;
-    font-weight: bold
-}
-
-.date {
-    background-color: #ccc
-}
-
-/* feed */
