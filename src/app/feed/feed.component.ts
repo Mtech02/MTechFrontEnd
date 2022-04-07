@@ -32,9 +32,10 @@ export class FeedComponent implements OnInit {
   key = 'data';
   reverse = true;
 
+  id = environment.id;
   photo = environment.photo;
   name = environment.name;
-  description = environment.description;
+  about = environment.about;
 
   constructor(
 
@@ -58,6 +59,7 @@ export class FeedComponent implements OnInit {
 
     this.getAllTheme();
     this.getAllPost();
+    console.log(this.about);
   }
 
   getAllPost() {
@@ -165,7 +167,7 @@ export class FeedComponent implements OnInit {
     environment.token = "";
     environment.name = "";
     environment.id = 0;
-    environment.description = '';
+    environment.about = '';
   }
 
 }

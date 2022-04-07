@@ -7,7 +7,7 @@ export class UserModel{
     public email: string;
     public password: string;
     public photo: string;
-    public description: string;
+    public about: string;
     public type: string;
     public post: PostModel[];
 }

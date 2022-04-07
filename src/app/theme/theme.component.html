@@ -70,8 +70,8 @@
                   <td>{{theme.id}}</td>
                   <td>{{theme.description}}</td>
                   <td class="d-flex justify-content-end">
-                    <a data-tip="edit" [routerLink]="['/theme-edit', theme.id]"><i class="fa fa-edit"></i></a>
-                    <a data-tip="delete" [routerLink]="['/theme-delete', theme.id]"><i class="fa fa-trash"></i></a>
+                    <button data-tip="edit" [routerLink]="['/edit-theme', theme.id]"><i class="fa fa-edit"></i></button>
+                    <button data-tip="delete" [routerLink]="['/delete-theme', theme.id]"><i class="fa fa-trash"></i></button>
                   </td>
                 </tr>
               </tbody>

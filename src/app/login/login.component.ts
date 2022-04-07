@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       environment.id=this.userLogin.id;
       environment.name=this.userLogin.name;
       environment.photo=this.userLogin.photo;
+      environment.about = this.userLogin.about;
 
       this.router.navigate(['/feed']);
       

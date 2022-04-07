@@ -23,6 +23,12 @@ export class AuthService {
 
   }
 
+  Update(user:UserModel): Observable<UserModel>{
+
+    return this.html.put<UserModel>('http://localhost:8080/user/update', user);
+
+  }
+
   Logged(){
 
     let ok = false;
