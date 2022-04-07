@@ -12,6 +12,14 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { FeedComponent } from './feed/feed.component';
+import { ThemeComponent } from './theme/theme.component';
+import { OrderModule } from 'ngx-order-pipe';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ThemeEditComponent } from './edit/theme-edit/theme-edit.component';
+import { PostEditComponent } from './edit/post-edit/post-edit.component';
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { DeleteThemeComponent } from './delete/delete-theme/delete-theme.component';
+import { DeletePostComponent } from './delete/delete-post/delete-post.component';
 
 
 @NgModule({
@@ -22,13 +30,21 @@ import { FeedComponent } from './feed/feed.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    FeedComponent
+    FeedComponent,
+    ThemeComponent,
+    ThemeEditComponent,
+    PostEditComponent,
+    UserEditComponent,
+    DeleteThemeComponent,
+    DeletePostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy, 

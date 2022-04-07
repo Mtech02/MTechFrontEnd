@@ -23,6 +23,12 @@ export class AuthService {
 
   }
 
+  Update(user:UserModel): Observable<UserModel>{
+
+    return this.html.put<UserModel>('http://localhost:8080/user/update', user);
+
+  }
+
   Logged(){
 
     let ok = false;
@@ -36,4 +42,11 @@ export class AuthService {
     return ok;
 
   }
+
+  getByUser(id: number): Observable<UserModel>{
+
+    return this.html.get<UserModel>(`http://localhost:8080/user/${id}`);
+
+  }
+
 }
