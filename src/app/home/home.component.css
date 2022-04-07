@@ -1,6 +1,9 @@
-h2{
+.titulo {
 
-    color: #ffffff;
+  font-size: 40px;
+  color: #ffffff;
+  font-weight: 900;
+  font-style: italic;
 
 }
 

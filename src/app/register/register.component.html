@@ -21,14 +21,17 @@
                 <form class="myform">
                   <div class="form-group"> <input [(ngModel)]="user.name" type="name" name="name" class="form-control"
                       placeholder="Nome"> </div>
-                  <div class="form-group"> <input [(ngModel)]="user.email" type="email" name="email"class="form-control"
-                      placeholder="Email"> </div>
-                  <div class="form-group"> <input type="password"(input)="confirmePassword($event)"  class="form-control" placeholder="Senha"> </div>
-                  <div class="form-group"> <input [(ngModel)]="user.password" type="password" name="password" class="form-control"
-                      placeholder="Confirme sua Senha">
+                  <div class="form-group"> <input [(ngModel)]="user.email" type="email" name="email"
+                      class="form-control" placeholder="Email"> </div>
+                  <div class="form-group"> <input [(ngModel)]="user.description" type="text" name="description"
+                      class="form-control" placeholder="Compartilhe sobre você"> </div>
+                  <div class="form-group"> <input [(ngModel)]="user.photo" type="photo" name="photo"
+                      class="form-control" placeholder="Foto"> </div>
+                  <div class="form-group"> <input type="password" (input)="confirmePassword($event)"
+                      class="form-control" placeholder="Senha"> </div>
+                  <div class="form-group"> <input [(ngModel)]="user.password" type="password" name="password"
+                      class="form-control" placeholder="Confirme sua Senha">
                   </div>
-                  <div class="form-group"> <input [(ngModel)]="user.photo" type="photo" name="photo" class="form-control"
-                      placeholder="Foto"> </div>
                   <div class="btn-flex">
 
                     <div class="form-group mt-2">
