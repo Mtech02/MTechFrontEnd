@@ -30,7 +30,7 @@ export class DeletePostComponent implements OnInit {
 
     if (environment.token == '') {
 
-      alert("Sua sessão expirou!");
+      this.alerts.showAlertInfo("Sua sessão expirou!");
       this.router.navigate(["/home"]);
     }
 
@@ -53,7 +53,7 @@ export class DeletePostComponent implements OnInit {
 
     this.postService.deletePost(this.idPost).subscribe(() =>{
 
-      alert("Publicação apagada com sucesso!");
+      this.alerts.showAlertSuccess("Publicação apagada com sucesso!");
       this.router.navigate(['/feed']);
 
     });

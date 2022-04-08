@@ -30,7 +30,7 @@ export class ThemeEditComponent implements OnInit {
 
     if (environment.token == '') {
 
-      alert("Sua sessão expirou!");
+      this.alerts.showAlertInfo("Sua sessão expirou!");
       this.router.navigate(["/home"]);
     }
 
@@ -54,7 +54,7 @@ export class ThemeEditComponent implements OnInit {
     this.themeService.putTheme(this.themeModel).subscribe((resp: ThemeModel) =>{
 
       this.themeModel = resp;
-      alert("Tema atualizado com sucesso!");
+      this.alerts.showAlertSuccess("Tema atualizado com sucesso!");
       this.router.navigate(['/theme']);
 
     });

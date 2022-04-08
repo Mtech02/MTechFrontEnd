@@ -1,3 +1,4 @@
+import { AlertsService } from './../service/alerts.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private alerts: AlertsService
   ) { }
 
   ngOnInit(){
@@ -36,7 +38,7 @@ export class LoginComponent implements OnInit {
       
     }, error =>{if(error.status==500 || error.status==401){
 
-      alert("Usuária ou senha inválidas!");
+      this.alerts.showAlertDanger("Usuária ou senha inválidas!");
 
     }})
   }

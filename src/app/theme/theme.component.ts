@@ -19,7 +19,7 @@ export class ThemeComponent implements OnInit {
 
     private router: Router,
     private themeService: ThemeService,
-    private alerta: AlertsService
+    private alerts: AlertsService
 
   ) { }
 
@@ -27,7 +27,7 @@ export class ThemeComponent implements OnInit {
 
     if (environment.token == '') {
 
-      alert("Sua sessão expirou!");
+      this.alerts.showAlertInfo("Sua sessão expirou!");
       this.router.navigate(["/home"]);
     }
 
@@ -52,7 +52,7 @@ export class ThemeComponent implements OnInit {
     this.themeService.postTheme(this.theme).subscribe((resp: ThemeModel) =>{
 
       this.theme = resp;
-      alert("Tema cadastrado com sucesso!");
+      this.alerts.showAlertSuccess("Tema cadastrado com sucesso!");
       this.findAllTheme();
       this.theme = new ThemeModel();
 
