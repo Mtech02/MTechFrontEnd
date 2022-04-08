@@ -6,5 +6,5 @@ export class UserLogin{
     public photo: string;
     public type: string;
     public token: string;
-    public about: string;
+    public description: string;
 }

@@ -17,7 +17,7 @@ export class UserEditComponent implements OnInit {
   confirmPassword: string;
   typeUsers: string;
   photo: string;
-  about: string;
+  description: string;
 
   photoUser = environment.photo;
 
@@ -84,7 +84,7 @@ export class UserEditComponent implements OnInit {
         environment.token = '';
         environment.name = '';
         environment.photo = '';
-        environment.about = ''
+        environment.description = ''
         environment.id =0;
         this.router.navigate(['/login']);
       });      

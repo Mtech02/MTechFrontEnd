@@ -35,7 +35,7 @@ export class FeedComponent implements OnInit {
   id = environment.id;
   photo = environment.photo;
   name = environment.name;
-  about = environment.about;
+  description = environment.description;
 
   constructor(
 
@@ -59,7 +59,7 @@ export class FeedComponent implements OnInit {
 
     this.getAllTheme();
     this.getAllPost();
-    console.log(this.about);
+    console.log(this.description);
   }
 
   getAllPost() {
@@ -167,7 +167,7 @@ export class FeedComponent implements OnInit {
     environment.token = "";
     environment.name = "";
     environment.id = 0;
-    environment.about = '';
+    environment.description = '';
   }
 
 }
