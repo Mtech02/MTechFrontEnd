@@ -1,6 +1,7 @@
-.titulo {
+#titulo {
 
   font-size: 40px;
+  font-weight: 700;
   color: #ffffff;
   font-weight: 900;
   font-style: italic;
@@ -36,7 +37,7 @@ ul {
 }
 
 p {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 30px;
   font-weight: 300;
   color: #afafaf;
