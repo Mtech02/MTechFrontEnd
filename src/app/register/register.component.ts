@@ -1,3 +1,4 @@
+import { AlertsService } from './../service/alerts.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserLogin } from '../Model/UserLogin';
@@ -17,7 +18,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private authService:AuthService,
-    private router: Router
+    private router: Router,
+    private alerts: AlertsService
     ) { }
 
   ngOnInit(){
@@ -44,7 +46,7 @@ export class RegisterComponent implements OnInit {
 
     if(this.user.password != this.confirmPassword){
 
-      alert("As senhas precisam ser iguais!");
+      this.alerts.showAlertDanger("As senhas precisam ser iguais!");
 
     }else{
 

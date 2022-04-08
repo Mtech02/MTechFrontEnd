@@ -17,6 +17,7 @@ export class UserEditComponent implements OnInit {
   confirmPassword: string;
   typeUsers: string;
   photo: string;
+  about: string;
 
   photoUser = environment.photo;
 
@@ -35,7 +36,7 @@ export class UserEditComponent implements OnInit {
 
     if (environment.token == '') {
 
-      alert("Sua sessão expirou!");
+      this.alerts.showAlertInfo("Sua sessão expirou!");
       this.router.navigate(["/home"]);
     }
 
@@ -72,17 +73,18 @@ export class UserEditComponent implements OnInit {
 
     if(this.user.password != this.confirmPassword){
 
-      alert("As senhas precisam ser iguais!");
+      this.alerts.showAlertDanger("As senhas precisam ser iguais!");
 
     }else{
 
       this.authService.Update(this.user).subscribe((resp:UserModel) =>{
 
         this.user = resp;
-        alert("Usuário cadastrado com sucesso! Faça login novamente!");
+        this.alerts.showAlertInfo("Usuário cadastrado com sucesso! Faça login novamente!");
         environment.token = '';
         environment.name = '';
         environment.photo = '';
+        environment.about = ''
         environment.id =0;
         this.router.navigate(['/login']);
       });      

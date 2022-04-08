@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class PostService {
 
+  postModel: PostModel;
+
   constructor(
 
     private http: HttpClient

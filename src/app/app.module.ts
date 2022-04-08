@@ -20,6 +20,7 @@ import { PostEditComponent } from './edit/post-edit/post-edit.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { DeleteThemeComponent } from './delete/delete-theme/delete-theme.component';
 import { DeletePostComponent } from './delete/delete-post/delete-post.component';
+import { AlertComponent } from './alert/alert.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { DeletePostComponent } from './delete/delete-post/delete-post.component'
     PostEditComponent,
     UserEditComponent,
     DeleteThemeComponent,
-    DeletePostComponent
+    DeletePostComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

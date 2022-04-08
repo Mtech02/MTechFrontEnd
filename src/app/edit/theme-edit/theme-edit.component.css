@@ -1,22 +1,7 @@
-@keyframes changeBackgroundColor {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100%;
-  }
-
-  100% {
-    background-position: 50% 0%;
-  }
-}
-
 .bg-theme-edit {
 
-  background: linear-gradient(135deg, #080019 0%, #0b0c0e 100%);
+  background: rgb(206, 161, 255);
   background-size: 300% 300%;
-  animation: changeBackgroundColor 15s ease infinite;
 
 }
 
@@ -38,8 +23,8 @@
   line-height: 22px;
   letter-spacing: 0.5px;
   outline: none;
-  color: #c4c3ca;
-  background-color: #1f2029;
+  color: #000000;
+  background-color: #fff;
   border: none;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(15.5px);
@@ -77,9 +62,9 @@
   -ms-flex-pack: center;
   text-align: center;
   border: none;
-  background-color: #ffeba7;
-  color: #102770;
-  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, .2);
+  background: linear-gradient(135deg, rgba(176, 106, 252, 1) 39%, rgba(116, 17, 255, 1) 101%);;
+  color: #fff;
+  box-shadow: 0 8px 24px 0 rgba(255, 0, 208, 0.2);
 }
 
 .btn:active,
@@ -117,9 +102,9 @@
   -ms-flex-pack: center;
   text-align: center;
   border: none;
-  background-color: #ffeba7;
-  color: #102770;
-  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, .2);
+  background: linear-gradient(135deg, rgba(176, 106, 252, 1) 39%, rgba(116, 17, 255, 1) 101%);;
+  color: #fff;
+  box-shadow: 0 8px 24px 0 rgba(255, 0, 208, 0.2);
   text-decoration: none;
 }
 
