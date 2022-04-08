@@ -1,8 +1,6 @@
 .bg-post-edit {
 
-  background: linear-gradient(135deg, #080019 0%, #0b0c0e 100%);
-  background-size: 300% 300%;
-  animation: changeBackgroundColor 15s ease infinite;
+  background: rgba(176, 106, 252, 1);
 
 }
 

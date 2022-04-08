@@ -1,17 +1,17 @@
-.titulo {
+#titulo {
 
   font-size: 40px;
+  font-weight: 700;
   color: #ffffff;
   font-weight: 900;
   font-style: italic;
 
 }
 
-html,
 .bg-home {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  background-color: #E393FF;
+  background: #f7b1e5;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,7 +37,7 @@ ul {
 }
 
 p {
-  font-size: 15px;
+  font-size: 20px;
   line-height: 30px;
   font-weight: 300;
   color: #afafaf;
@@ -53,11 +53,6 @@ img {
 global styles
 --------------------------------------------- 
 */
-html,
-body {
-  background: #E393FF;
-  font-family: 'Roboto', sans-serif;
-}
 
 ::selection {
   background: #4b8ef1;
@@ -767,7 +762,7 @@ preloader
 
 .main-banner:after {
   content: '';
-  background-image: url(https://i.imgur.com/prP0ESU.png);
+  background-image: url(https://i.imgur.com/KinELnx.png);
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;

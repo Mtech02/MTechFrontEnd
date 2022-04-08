@@ -25,7 +25,8 @@ export class DeleteThemeComponent implements OnInit {
 
   ngOnInit() {
     if (environment.token == '') {
-      this.router.navigate(['/login'])
+      this.alerts.showAlertInfo("Sua sessão expirou!")
+      this.router.navigate(['/home'])
     }
 
     this.idTheme = this.route.snapshot.params['id']
@@ -41,7 +42,7 @@ export class DeleteThemeComponent implements OnInit {
 
   delete() {
     this.themeService.deleteTheme(this.idTheme).subscribe(() => {
-      alert('Tema apagado com sucesso!')
+      this.alerts.showAlertSuccess('Tema apagado com sucesso!')
       this.router.navigate(['/theme'])
     });
   }

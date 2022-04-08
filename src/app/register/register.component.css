@@ -14,7 +14,7 @@
 
 .bg-register{
 
-    background: linear-gradient(45deg, #efcaff 0%, #c8a3f5 100%);
+    background: linear-gradient(45deg, #f7b1e5 0%, #8620c1 100%);
     background-size: 300% 300%;
     animation: changeBackgroundColor 15s ease infinite;
 
@@ -143,7 +143,7 @@ p {
 
 .btn-register{
 
-    font-size: 15px;
+    font-size: 14px;
 
 }
 

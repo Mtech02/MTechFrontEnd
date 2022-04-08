@@ -32,16 +32,15 @@
                   <div class="form-group"> <input [(ngModel)]="user.password" type="password" name="password"
                       class="form-control" placeholder="Confirme sua Senha">
                   </div>
+                  <div class="form-group mt-2 mb-3">
+                    <select class="form-control form-style" (change)="typeUser($event)">
+                      <option value="">Selecione tipo de usuárie</option>
+                      <option value="normal">Empresa</option>
+                      <option value="normal">Usuária</option>
+                    </select>
+                    <i class="input-icon uil uil-lock-alt"></i>
+                  </div>
                   <div class="btn-flex">
-
-                    <div class="form-group mt-2">
-                      <select class="form-control form-style" (change)="typeUser($event)">
-                        <option value="">Selecione tipo de usuárie</option>
-                        <option value="normal">Empresa</option>
-                        <option value="normal">Usuária</option>
-                      </select>
-                      <i class="input-icon uil uil-lock-alt"></i>
-                    </div>
 
                     <div class="form-group mt-3"> <button type="button" class="btn btn-cancel btn-lg btn-register"
                         routerLink="/login">Cancelar</button></div>
@@ -55,7 +54,7 @@
         </div>
       </div>
       <div class="col-sm-5 img-register">
-        <img width="400px" height="400px" src="https://i.imgur.com/MQLqNnl.png" alt="">
+        <img width="400px" height="400px" src="https://i.imgur.com/ReHynRD.png" alt="">
       </div>
     </div>
   </div>

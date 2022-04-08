@@ -53,7 +53,7 @@ export class FeedComponent implements OnInit {
 
     if (environment.token == '') {
 
-      alert("Sua sessão expirou!");
+      this.alerts.showAlertInfo("Sua sessão expirou!");
       this.router.navigate(["/home"]);
     }
 
@@ -152,7 +152,7 @@ export class FeedComponent implements OnInit {
     this.postService.post(this.postModel).subscribe((resp: PostModel) => {
 
       this.postModel = resp;
-      alert("Postagem publicada com sucesso!");
+      this.alerts.showAlertSuccess("Postagem publicada com sucesso!");
       this.postModel = new PostModel();
 
       this.getAllPost();
@@ -163,7 +163,7 @@ export class FeedComponent implements OnInit {
 
   logoff() {
     this.router.navigate(["/home"]),
-      environment.photo = "";
+    environment.photo = "";
     environment.token = "";
     environment.name = "";
     environment.id = 0;

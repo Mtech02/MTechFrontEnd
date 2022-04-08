@@ -48,9 +48,9 @@ h1{
   -ms-flex-pack: center;
   text-align: center;
   border: none;
-  background-color: #ffeba7;
-  color: #102770;
-  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, .2);
+  background: linear-gradient(135deg, rgba(176, 106, 252, 1) 39%, rgba(116, 17, 255, 1) 101%);;
+  color: #fff;
+  box-shadow: 0 8px 24px 0 rgba(255, 0, 208, 0.2);
 }
 
 .btn:active,

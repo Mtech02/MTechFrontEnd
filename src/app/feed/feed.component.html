@@ -14,8 +14,8 @@
                   <p class="w-75 mx-auto mb-3 text-dark"> {{about}} </p>
                 </div>
               </div>
-                <a class="btn btn-primary btn-block mt-50" [routerLink]="['/edit-user', id]">Editar Perfil</a>
-                <button class="btn btn-primary btn-block mt-2 mb-5" (click)="logoff()">Sair</button>
+                <button class="btn btn-post btn-block mt-50" [routerLink]="['/edit-user', id]">Editar Perfil</button>
+                <button class="btn btn-post btn-block mt-2 mb-5" (click)="logoff()">Sair</button>
             </div>
             <div class="col-lg-8">
               <div class="container content">
@@ -41,6 +41,7 @@
                     <p>
                       {{item.description}}
                     </p>
+                    <p class="text-center"> <img src="{{item.photo}}" width="500px" height="500px" alt=""> </p>
                     <p class="small text-muted mt-2 mb-0">
                       <span>
                         <i class="mdi mdi-star mr-1"></i>4
