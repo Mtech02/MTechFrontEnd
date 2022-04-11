@@ -35,6 +35,7 @@ export class JobComponent implements OnInit {
   photo = environment.photo;
   name = environment.name;
   description = environment.description;
+  type = environment.type;
 
   constructor(
 
@@ -178,12 +179,21 @@ export class JobComponent implements OnInit {
     environment.name = "";
     environment.id = 0;
     environment.description = '';
+    environment.type = '';
   }
 
-  click() {
-    if (environment.token != '') {
+  buttonAdm() {
+
+    let ok = false;
+
+    if (this.type == 'adm') {
+
+      ok = true;
 
     }
+
+    return ok;
+
   }
 
 }
