@@ -8,13 +8,21 @@
               <div class="border-bottom text-center pb-4">
                 <img src="{{photo}}" width="150px" height="150px" alt="profile" class="img-lg rounded-circle mb-3">
                 <div class="mb-3">
-                  <a class="text-dark" routerLink="/myprofile"><h3 class="font-weight-bold">{{name}}</h3></a>
+                  <!-- <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab"
+                    data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens"
+                    aria-selected="true">Todas as Postagens</a> -->
+
+                  <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold"
+                    id="nav-minhasPostagens-tab" data-toggle="tab" routerLink="/myprofile" role="tab"
+                    aria-controls="nav-minhasPostagens" aria-selected="false">{{user.name}}</a>
+
+
                 </div>
                 <div>
                   <p class="w-75 mx-auto mb-3 text-dark"> {{description}} </p>
                 </div>
               </div>
-                <button class="btn btn-post btn-block mt-50 mb-5" (click)="logoff()">Sair</button>
+              <button class="btn btn-post btn-block mt-50 mb-5" (click)="logoff()">Sair</button>
             </div>
             <div class="col-lg-8 bg-feed">
               <div class="container content">
@@ -26,32 +34,36 @@
                   </div>
                 </div>
               </div>
-              <div class="profile-feed bg-feed">
-                <div class="d-flex align-items-start profile-feed-item"
-                  *ngFor="let item of listPost | orderBy: key : reverse">
-                  <img src="{{item.user.photo}}" alt="profile" class="img-sm rounded-circle">
-                  <div class="ml-4">
-                    <h6>
-                      {{item.user.name}}
-                      <small class="ml-4 text-muted"><i
-                          class="mdi mdi-clock mr-1"></i>{{item.date | date: 'dd/MM/yyyy'}} às
-                        {{item.date | date: 'HH:mm'}}</small>
-                    </h6>
-                    <p>
-                      {{item.description}}
-                    </p>
-                    <p class="text-center"> <img src="{{item.photo}}" width="500px" height="500px" alt=""> </p>
-                    <p class="small text-muted mt-2 mb-0">
-                      <span>
-                        <i class="mdi mdi-star mr-1"></i>4
-                      </span>
-                      <span class="ml-2">
-                        <i class="mdi mdi-comment mr-1"></i>11
-                      </span>
-                      <span class="ml-2">
-                        <i class="mdi mdi-reply"></i>
-                      </span>
-                    </p>
+              <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel"
+                aria-labelledby="nav-todasPostagens-tab">
+
+                <div class="profile-feed bg-feed">
+                  <div class="d-flex align-items-start profile-feed-item"
+                    *ngFor="let item of listPost | orderBy: key : reverse">
+                    <img src="{{item.user.photo}}" alt="profile" class="img-sm rounded-circle">
+                    <div class="ml-4">
+                      <h6>
+                        {{item.user.name}}
+                        <small class="ml-4 text-muted"><i
+                            class="mdi mdi-clock mr-1"></i>{{item.date | date: 'dd/MM/yyyy'}} às
+                          {{item.date | date: 'HH:mm'}}</small>
+                      </h6>
+                      <p>
+                        {{item.description}}
+                      </p>
+                      <p class="text-center"> <img src="{{item.photo}}" width="500px" height="500px" alt=""> </p>
+                      <p class="small text-muted mt-2 mb-0">
+                        <span>
+                          <i class="mdi mdi-star mr-1"></i>4
+                        </span>
+                        <span class="ml-2">
+                          <i class="mdi mdi-comment mr-1"></i>11
+                        </span>
+                        <span class="ml-2">
+                          <i class="mdi mdi-reply"></i>
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -60,9 +72,12 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
+
+
 
 
 <!-- Modal -->
