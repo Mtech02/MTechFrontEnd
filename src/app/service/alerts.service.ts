@@ -1,4 +1,4 @@
-import { AlertComponent } from './../alert/alert.component';
+import { AlertComponent } from '../../../alert/alert.component';
 import { Injectable } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 

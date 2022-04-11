@@ -58,6 +58,7 @@ export class ProfileComponent implements OnInit {
 
     this.getAllTheme();
     this.getAllPost();
+    this.findByIdUser();
 
   }
 
@@ -65,7 +66,17 @@ export class ProfileComponent implements OnInit {
 
     this.postService.getAllPost().subscribe((resp: PostModel[]) => {
 
-      this.listPost = resp;
+      resp.forEach(item => {
+
+        if (!item.photo) {
+
+          item.photo = "https://img.freepik.com/vetores-gratis/icone-de-perfil-de-avatar_188544-4755.jpg?size=338&ext=jpg";
+
+        }
+
+        this.listPost = resp;
+
+      });
 
     });
 
@@ -169,4 +180,12 @@ export class ProfileComponent implements OnInit {
     environment.description = '';
   }
 
+  click() {
+    if (environment.token != '') {
+
+    }
+  }
+
 }
+
+

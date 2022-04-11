@@ -65,8 +65,18 @@ export class FeedComponent implements OnInit {
 
     this.postService.getAllPost().subscribe((resp: PostModel[]) => {
 
-      this.listPost = resp;
+      resp.forEach(item => {
 
+        if (!item.photo) {
+
+          item.photo = "https://img.freepik.com/vetores-gratis/icone-de-perfil-de-avatar_188544-4755.jpg?size=338&ext=jpg";
+
+        }
+
+        this.listPost = resp;
+
+      });
+      
     });
 
   }
@@ -121,20 +131,20 @@ export class FeedComponent implements OnInit {
 
   }
 
-  findByThemePost(){
+  findByThemePost() {
 
-    if(this.themePost == ''){
+    if (this.themePost == '') {
 
       this.getAllPost();
 
-    }else{
+    } else {
 
       this.themeService.getByNameTheme(this.themePost).subscribe((resp: ThemeModel[]
-        ) =>{
+      ) => {
 
-          this.listTheme = resp;
+        this.listTheme = resp;
 
-        });
+      });
 
     }
 
@@ -162,7 +172,7 @@ export class FeedComponent implements OnInit {
 
   logoff() {
     this.router.navigate(["/home"]),
-    environment.photo = "";
+      environment.photo = "";
     environment.token = "";
     environment.name = "";
     environment.id = 0;
