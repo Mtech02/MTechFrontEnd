@@ -1,8 +1,6 @@
 .bg-post-delete {
 
-  background: linear-gradient(135deg, #f556ab 0%, #660daf 100%);
-  background-size: 300% 300%;
-  animation: changeBackgroundColor 15s ease infinite;
+  background: rgb(206, 161, 255);
 
 }
 
@@ -41,5 +39,11 @@
 
   font-size: 25px;
   cursor: pointer;
+
+}
+
+.mb-10{
+
+  margin-bottom: 20px;
 
 }

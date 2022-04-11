@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
 
         this.router.navigate(["/login"]);
 
-        alert("Cadastro realizado com sucesso!");
+        this.alerts.showAlertSuccess("Cadastro realizado com sucesso!");
       });
 
     }

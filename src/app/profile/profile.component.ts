@@ -1,20 +1,20 @@
-import { AlertsService } from './../service/alerts.service';
-import { AuthService } from './../service/auth.service';
-import { ThemeService } from './../service/theme.service';
 import { UserModel } from './../Model/UserModel';
 import { ThemeModel } from './../Model/ThemeModel';
 import { PostModel } from './../Model/PostModel';
-import { PostService } from './../service/post.service';
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment.prod';
+import { AuthService } from './../service/auth.service';
+import { ThemeService } from './../service/theme.service';
+import { PostService } from './../service/post.service';
+import { AlertsService } from './../service/alerts.service';
+import { environment } from './../../environments/environment.prod';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-feed',
-  templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.css']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class FeedComponent implements OnInit {
+export class ProfileComponent implements OnInit {
 
   postModel: PostModel = new PostModel();
   listPost: PostModel[];
@@ -39,10 +39,10 @@ export class FeedComponent implements OnInit {
   constructor(
 
     private router: Router,
+    public alerts: AlertsService,
     private postService: PostService,
     private themeService: ThemeService,
     private authService: AuthService,
-    private alerts: AlertsService
 
   ) { }
 
@@ -121,20 +121,20 @@ export class FeedComponent implements OnInit {
 
   }
 
-  findByThemePost(){
+  findByThemePost() {
 
-    if(this.themePost == ''){
+    if (this.themePost == '') {
 
       this.getAllPost();
 
-    }else{
+    } else {
 
       this.themeService.getByNameTheme(this.themePost).subscribe((resp: ThemeModel[]
-        ) =>{
+      ) => {
 
-          this.listTheme = resp;
+        this.listTheme = resp;
 
-        });
+      });
 
     }
 
@@ -162,7 +162,7 @@ export class FeedComponent implements OnInit {
 
   logoff() {
     this.router.navigate(["/home"]),
-    environment.photo = "";
+      environment.photo = "";
     environment.token = "";
     environment.name = "";
     environment.id = 0;
@@ -170,4 +170,3 @@ export class FeedComponent implements OnInit {
   }
 
 }
-
