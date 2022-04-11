@@ -1,6 +1,3 @@
-import { UserModel } from './../Model/UserModel';
-import { ThemeModel } from './../Model/ThemeModel';
-import { PostModel } from './../Model/PostModel';
 import { AlertsService } from './../service/alerts.service';
 import { AuthService } from './../service/auth.service';
 import { ThemeService } from './../service/theme.service';
@@ -43,10 +40,10 @@ export class CourseComponent implements OnInit {
   constructor(
 
     private router: Router,
-    public alerts: AlertsService,
     private postService: PostService,
     private themeService: ThemeService,
     private authService: AuthService,
+    private alerts: AlertsService
 
   ) { }
 
@@ -62,6 +59,9 @@ export class CourseComponent implements OnInit {
 
     this.getAllTheme();
     this.getAllPost();
+    console.log(this.name);
+    console.log(this.type);
+  }
 
   getAllPost() {
 
@@ -70,6 +70,10 @@ export class CourseComponent implements OnInit {
       resp.forEach(item => {
 
         if (!item.photo) {
+
+          item.photo = "https://i.ibb.co/Lz5YtFf/sem-foto.png";
+
+        }
 
         this.listPost = resp;
 
@@ -124,6 +128,27 @@ export class CourseComponent implements OnInit {
         this.listPost = resp;
 
       });
+
+    }
+
+  }
+
+  findByThemePost() {
+
+    if (this.themePost == '') {
+
+      this.getAllPost();
+
+    } else {
+
+      this.themeService.getByNameTheme(this.themePost).subscribe((resp: ThemeModel[]
+      ) => {
+
+        this.listTheme = resp;
+
+      });
+
+    }
 
   }
 
