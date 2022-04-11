@@ -8,7 +8,7 @@
               <div class="border-bottom text-center pb-4">
                 <img src="{{photo}}" width="150px" height="150px" alt="profile" class="img-lg rounded-circle mb-3">
                 <div class="mb-3">
-                  <a class="text-dark" routerLink="/myprofile">
+                  <a class="text-dark text-decoration-none">
                     <h3 class="font-weight-bold">{{name}}</h3>
                   </a>
                 </div>
@@ -31,10 +31,11 @@
               </div>
 
               <a (load)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold"
-                id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"
-                aria-selected="true"></a>
+                id="nav-minhasPostagens-tab" data-toggle="tab" href="#minhasPostagens" role="tab"
+                aria-controls="nav-minhasPostagens" aria-selected="true"></a>
 
-              <div class="tab-pane fade show active" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+              <div class="tab-pane fade show active" id="minhasPostagens" role="tabpanel"
+                aria-labelledby="nav-minhasPostagens-tab">
 
                 <div class=" profile-feed bg-feed show active" *ngFor="let item of user.post | orderBy : key : reverse">
                   <div class="d-flex align-items-start profile-feed-item">
@@ -52,18 +53,42 @@
                       <p class="text-center"> <img src="{{item.photo}}" width="500px" height="500px" alt=""> </p>
                       <p class="small text-muted mt-2 mb-0">
                         <span>
-                          <i class="mdi mdi-star mr-1"></i>4
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-heart-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                          </svg> 4
                         </span>
                         <span class="ml-2">
-                          <i class="mdi mdi-comment mr-1"></i>11
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-chat-left-fill" viewBox="0 0 16 16">
+                            <path
+                              d="M2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                          </svg> 11
                         </span>
                         <span class="ml-2">
-                          <i class="mdi mdi-reply"></i>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-share-fill" viewBox="0 0 16 16">
+                            <path
+                              d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z" />
+                          </svg>
                         </span>
                       </p>
                     </div>
-                    <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
-                    <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+                    <a [routerLink]="['/edit-post', item.id]" class="purple mr-3" href=""><svg
+                        xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-pencil-square" viewBox="0 0 16 16">
+                        <path
+                          d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                        <path fill-rule="evenodd"
+                          d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                      </svg></a>
+                    <a [routerLink]="['/delete-post', item.id]" class="text-danger" href=""><svg
+                        xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z" />
+                      </svg></a>
                   </div>
                 </div>
               </div>
