@@ -1,4 +1,4 @@
-.bg-feed{
+.bg-feed {
 
   background-color: rgb(206, 161, 255);
 
@@ -165,18 +165,18 @@
   color: #000;
 }
 
-.mt-50{
+.mt-50 {
 
   margin-top: 50%;
 
 }
 
-@media (max-width: 991px){
+@media (max-width: 991px) {
 
-  .mt-50{
+  .mt-50 {
 
     margin-top: 5px;
-  
+
   }
 
 }

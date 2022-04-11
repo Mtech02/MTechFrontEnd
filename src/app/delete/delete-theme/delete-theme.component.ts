@@ -48,3 +48,4 @@ export class DeleteThemeComponent implements OnInit {
   }
 
 }
+

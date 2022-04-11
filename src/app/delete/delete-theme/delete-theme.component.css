@@ -1,17 +1,3 @@
-@keyframes changeBackgroundColor {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100%;
-  }
-
-  100% {
-    background-position: 50% 0%;
-  }
-}
-
 .bg-delete-theme {
 
   background: rgb(206, 161, 255);
@@ -100,4 +86,10 @@
   background-color: #ff6f6f;
   color: #ffffff;
   box-shadow: 0 8px 24px 0 rgba(16, 39, 112, .2);
+}
+
+.mb-20{
+
+  margin-bottom: 20px;
+
 }

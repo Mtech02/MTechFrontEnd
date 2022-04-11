@@ -21,6 +21,11 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { DeleteThemeComponent } from './delete/delete-theme/delete-theme.component';
 import { DeletePostComponent } from './delete/delete-post/delete-post.component';
 import { AlertComponent } from './alert/alert.component';
+import { ProfileComponent } from './profile/profile.component';
+import { JobComponent } from './job/job.component';
+import { MaterialsComponent } from './materials/materials.component';
+import { CourseComponent } from './course/course.component';
+import { SupportComponent } from './support/support.component';
 
 
 @NgModule({
@@ -38,7 +43,12 @@ import { AlertComponent } from './alert/alert.component';
     UserEditComponent,
     DeleteThemeComponent,
     DeletePostComponent,
-    AlertComponent
+    AlertComponent,
+    ProfileComponent,
+    JobComponent,
+    MaterialsComponent,
+    CourseComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
