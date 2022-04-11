@@ -10,58 +10,19 @@
                   <div class="mb-3">
   
                     <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold"
-                      id="nav-minhasPostagens-tab" data-toggle="tab" routerLink="/myprofile" role="tab"
-                      aria-controls="nav-minhasPostagens" aria-selected="false">
-                      <h3 class="text-dark font-weight-bold">{{name}}</h3>
-                    </a>
+                      id="nav-minhasPostagens-tab" data-toggle="tab" routerLink="/myprofile" role="tab">
   
                   </div>
                   <div>
                     <p class="w-75 mx-auto mb-3 text-dark"> {{description}} </p>
                   </div>
                 </div>
-                <button *ngIf="buttonAdm()" class="btn btn-post btn-block mt-5" routerLink="/theme">Cadastrar
-                  Tema</button>
                 <button class="btn btn-post btn-block mt-5" (click)="logoff()">Sair</button>
               </div>
               <div class="col-lg-8 bg-feed">
                 <div class="container content">
                   <div class="row align-items-center content">
                     <div class="col-12 text-center bg-feed">
-                      <button type="button" class="btn btn-post px-4 py-3" data-toggle="modal" data-target="#post">
-                        Inicie uma publicação
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-pane fade show active" id="vagas" role="tabpanel"
-                  aria-labelledby="nav-vagas-tab">
-  
-                  <div class="profile-feed bg-feed">
-                    <div class="d-flex align-items-start profile-feed-item"
-                      *ngFor="let item of theme | orderBy: key : reverse">
-                      <img src="{{user.photo}}" alt="profile" class="img-sm rounded-circle">
-                      <div class="ml-4">
-                        <h6 class="paragraph font-weight-bold">
-                          {{user.name}}
-                          <small class="ml-4 text-dark"><i
-                              class="mdi mdi-clock mr-1"></i>{{item.post.date | date: 'dd/MM/yyyy'}} às
-                            {{item.post.date | date: 'HH:mm'}}</small>
-                        </h6>
-                        <p class="paragraph">
-                          {{item.post.description}}
-                        </p>
-                        <p class="text-center"> <img src="{{item.post.photo}}" width="500px" height="500px" alt=""> </p>
-                        <p class="small text-muted mt-2 mb-0">
-                          <span>
-                            <i class="mdi mdi-star mr-1"></i>4
-                          </span>
-                          <span class="ml-2">
-                            <i class="mdi mdi-comment mr-1"></i>11
-                          </span>
-                          <span class="ml-2">
-                            <i class="mdi mdi-reply"></i>
-                          </span>
                         </p>
                       </div>
                     </div>
@@ -118,6 +79,7 @@
                 </div>
   
                 <select [(ngModel)]="idTheme" name="idTheme" class="custom-select text-center">
+
                   <option *ngFor="let theme of listTheme" value="{{theme.id}}">{{theme.description}}</option>
                 </select>
   

@@ -8,6 +8,9 @@ import { PostService } from './../service/post.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
+import { PostModel } from '../Model/PostModel';
+import { ThemeModel } from '../Model/ThemeModel';
+import { UserModel } from '../Model/UserModel';
 
 @Component({
   selector: 'app-course',
@@ -59,9 +62,6 @@ export class CourseComponent implements OnInit {
 
     this.getAllTheme();
     this.getAllPost();
-    this.findByIdUser();
-
-  }
 
   getAllPost() {
 
@@ -70,10 +70,6 @@ export class CourseComponent implements OnInit {
       resp.forEach(item => {
 
         if (!item.photo) {
-
-          item.photo = "https://img.freepik.com/vetores-gratis/icone-de-perfil-de-avatar_188544-4755.jpg?size=338&ext=jpg";
-
-        }
 
         this.listPost = resp;
 
@@ -129,27 +125,6 @@ export class CourseComponent implements OnInit {
 
       });
 
-    }
-
-  }
-
-  findByThemePost() {
-
-    if (this.themePost == '') {
-
-      this.getAllPost();
-
-    } else {
-
-      this.themeService.getByNameTheme(this.themePost).subscribe((resp: ThemeModel[]
-      ) => {
-
-        this.listTheme = resp;
-
-      });
-
-    }
-
   }
 
   post() {
@@ -174,9 +149,9 @@ export class CourseComponent implements OnInit {
 
   logoff() {
     this.router.navigate(["/home"]),
-      environment.photo = "";
-    environment.token = "";
-    environment.name = "";
+    environment.photo = '';
+    environment.token = '';
+    environment.name = '';
     environment.id = 0;
     environment.description = '';
     environment.type = '';
@@ -195,5 +170,4 @@ export class CourseComponent implements OnInit {
     return ok;
 
   }
-
 }
