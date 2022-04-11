@@ -35,6 +35,7 @@ export class FeedComponent implements OnInit {
   photo = environment.photo;
   name = environment.name;
   description = environment.description;
+  type = environment.type;
 
   constructor(
 
@@ -58,7 +59,8 @@ export class FeedComponent implements OnInit {
 
     this.getAllTheme();
     this.getAllPost();
-
+    console.log(this.name);
+    console.log(this.type);
   }
 
   getAllPost() {
@@ -69,14 +71,14 @@ export class FeedComponent implements OnInit {
 
         if (!item.photo) {
 
-          item.photo = "https://img.freepik.com/vetores-gratis/icone-de-perfil-de-avatar_188544-4755.jpg?size=338&ext=jpg";
+          item.photo = "https://i.ibb.co/Lz5YtFf/sem-foto.png";
 
         }
 
         this.listPost = resp;
 
       });
-      
+
     });
 
   }
@@ -172,11 +174,26 @@ export class FeedComponent implements OnInit {
 
   logoff() {
     this.router.navigate(["/home"]),
-      environment.photo = "";
-    environment.token = "";
-    environment.name = "";
+    environment.photo = '';
+    environment.token = '';
+    environment.name = '';
     environment.id = 0;
     environment.description = '';
+    environment.type = '';
+  }
+
+  buttonAdm() {
+
+    let ok = false;
+
+    if (this.type == 'adm') {
+
+      ok = true;
+
+    }
+
+    return ok;
+
   }
 
 }

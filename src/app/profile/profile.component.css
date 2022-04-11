@@ -180,3 +180,15 @@
   }
 
 }
+
+.purple{
+
+  color: #000000;
+
+}
+
+.purple:hover{
+
+  color:rgba(116, 17, 255, 1);
+
+}

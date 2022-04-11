@@ -8,21 +8,18 @@
               <div class="border-bottom text-center pb-4">
                 <img src="{{photo}}" width="150px" height="150px" alt="profile" class="img-lg rounded-circle mb-3">
                 <div class="mb-3">
-                  <!-- <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-todasPostagens-tab"
-                    data-toggle="tab" href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens"
-                    aria-selected="true">Todas as Postagens</a> -->
 
                   <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold"
                     id="nav-minhasPostagens-tab" data-toggle="tab" routerLink="/myprofile" role="tab"
-                    aria-controls="nav-minhasPostagens" aria-selected="false">{{user.name}}</a>
-
+                    aria-controls="nav-minhasPostagens" aria-selected="false"><h3 class="text-dark font-weight-bold">{{name}}</h3></a>
 
                 </div>
                 <div>
                   <p class="w-75 mx-auto mb-3 text-dark"> {{description}} </p>
                 </div>
               </div>
-              <button class="btn btn-post btn-block mt-50 mb-5" (click)="logoff()">Sair</button>
+              <button *ngIf="buttonAdm()" class="btn btn-post btn-block mt-5" routerLink="/theme">Cadastrar Tema</button>
+              <button class="btn btn-post btn-block mt-5" (click)="logoff()">Sair</button>
             </div>
             <div class="col-lg-8 bg-feed">
               <div class="container content">
@@ -42,13 +39,13 @@
                     *ngFor="let item of listPost | orderBy: key : reverse">
                     <img src="{{item.user.photo}}" alt="profile" class="img-sm rounded-circle">
                     <div class="ml-4">
-                      <h6>
+                      <h6 class="paragraph font-weight-bold">
                         {{item.user.name}}
-                        <small class="ml-4 text-muted"><i
+                        <small class="ml-4 text-dark"><i
                             class="mdi mdi-clock mr-1"></i>{{item.date | date: 'dd/MM/yyyy'}} às
                           {{item.date | date: 'HH:mm'}}</small>
                       </h6>
-                      <p>
+                      <p class="paragraph">
                         {{item.description}}
                       </p>
                       <p class="text-center"> <img src="{{item.photo}}" width="500px" height="500px" alt=""> </p>

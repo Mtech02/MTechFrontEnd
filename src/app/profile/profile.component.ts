@@ -59,8 +59,8 @@ export class ProfileComponent implements OnInit {
     this.getAllTheme();
     this.getAllPost();
     this.findByIdUser();
-
-  }
+    this.photoUser();
+  } 
 
   getAllPost() {
 
@@ -70,7 +70,7 @@ export class ProfileComponent implements OnInit {
 
         if (!item.photo) {
 
-          item.photo = "https://img.freepik.com/vetores-gratis/icone-de-perfil-de-avatar_188544-4755.jpg?size=338&ext=jpg";
+          item.photo = "https://i.ibb.co/Lz5YtFf/sem-foto.png";
 
         }
 
@@ -171,6 +171,16 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  photoUser(){
+
+    if(environment.photo == ''){
+
+      environment.photo = "https://www.iconspng.com/uploads/simple-user-icon.png";
+
+    }
+
+  }
+
   logoff() {
     this.router.navigate(["/home"]),
       environment.photo = "";
@@ -178,12 +188,6 @@ export class ProfileComponent implements OnInit {
     environment.name = "";
     environment.id = 0;
     environment.description = '';
-  }
-
-  click() {
-    if (environment.token != '') {
-
-    }
   }
 
 }
