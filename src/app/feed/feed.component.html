@@ -6,19 +6,25 @@
           <div class="row">
             <div class="col-lg-4 bg-feed">
               <div class="border-bottom text-center pb-4">
-                <img src="{{photo}}" width="150px" height="150px" alt="profile" class="img-lg rounded-circle mb-3">
+                <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold"
+                  id="nav-minhasPostagens-tab" data-toggle="tab" routerLink="/myprofile" role="tab"
+                  aria-controls="nav-minhasPostagens" aria-selected="false"><img src="{{photo}}" width="150px"
+                    height="150px" alt="profile" class="img-lg rounded-circle mb-3"></a>
                 <div class="mb-3">
 
                   <a (click)='findByIdUser()' class="nav-item nav-link text-secondary font-weight-bold"
                     id="nav-minhasPostagens-tab" data-toggle="tab" routerLink="/myprofile" role="tab"
-                    aria-controls="nav-minhasPostagens" aria-selected="false"><h3 class="text-dark font-weight-bold">{{name}}</h3></a>
+                    aria-controls="nav-minhasPostagens" aria-selected="false">
+                    <h3 class="text-dark font-weight-bold">{{name}}</h3>
+                  </a>
 
                 </div>
                 <div>
                   <p class="w-75 mx-auto mb-3 text-dark"> {{description}} </p>
                 </div>
               </div>
-              <button *ngIf="buttonAdm()" class="btn btn-post btn-block mt-5" routerLink="/theme">Cadastrar Tema</button>
+              <button *ngIf="buttonAdm()" class="btn btn-post btn-block mt-5" routerLink="/theme">Cadastrar
+                Tema</button>
               <button class="btn btn-post btn-block mt-5" (click)="logoff()">Sair</button>
             </div>
             <div class="col-lg-8 bg-feed">
@@ -115,7 +121,6 @@
               </div>
 
               <select [(ngModel)]="idTheme" name="idTheme" class="custom-select text-center">
-                <option> Selecione o tema</option>
                 <option *ngFor="let theme of listTheme" value="{{theme.id}}">{{theme.description}}</option>
               </select>
 
