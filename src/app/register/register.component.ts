@@ -62,4 +62,19 @@ export class RegisterComponent implements OnInit {
     }
 
   }
+
+  userTypeAdm(){
+
+    let ok = false
+
+    if(this.typeUsers == 'adm'){
+
+      ok = true;
+
+    }
+
+    return ok
+
+  }
+
 }

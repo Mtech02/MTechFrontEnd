@@ -37,8 +37,12 @@
                       <option value="">Selecione tipo de usuárie</option>
                       <option value="normal">Empresa</option>
                       <option value="normal">Usuária</option>
+                      <option value="normal">Adm</option>
                     </select>
                     <i class="input-icon uil uil-lock-alt"></i>
+                  </div>
+                  <div class="form-group"> <input *ngIf="userTypeAdm()" type="code" name="code"
+                      class="form-control" placeholder="Insera o código para adm">
                   </div>
                   <div class="btn-flex">
 
