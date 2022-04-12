@@ -137,7 +137,7 @@ export class FeedComponent implements OnInit {
 
     if (this.themePost == '') {
 
-      this.getAllPost();
+      this.getAllTheme();
 
     } else {
 

@@ -1,8 +1,5 @@
 import { SupportComponent } from './support/support.component';
-import { MaterialsComponent } from './materials/materials.component';
-import { JobComponent } from './job/job.component';
 import { ProfileComponent } from './profile/profile.component';
-import { CourseComponent } from './course/course.component';
 import { DeleteThemeComponent } from './delete/delete-theme/delete-theme.component';
 import { DeletePostComponent } from './delete/delete-post/delete-post.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
@@ -31,9 +28,6 @@ const routes: Routes = [
   {path: 'delete-post/:id', component: DeletePostComponent},
   {path: 'delete-theme/:id', component: DeleteThemeComponent},
   {path: 'myprofile', component: ProfileComponent},
-  {path: 'jobs', component: JobComponent},
-  {path: 'materials', component: MaterialsComponent},
-  {path: 'courses', component: CourseComponent},
   {path: 'support', component: SupportComponent}
   
 ]

@@ -22,9 +22,6 @@ import { DeleteThemeComponent } from './delete/delete-theme/delete-theme.compone
 import { DeletePostComponent } from './delete/delete-post/delete-post.component';
 import { AlertComponent } from './alert/alert.component';
 import { ProfileComponent } from './profile/profile.component';
-import { JobComponent } from './job/job.component';
-import { MaterialsComponent } from './materials/materials.component';
-import { CourseComponent } from './course/course.component';
 import { SupportComponent } from './support/support.component';
 
 
@@ -45,9 +42,6 @@ import { SupportComponent } from './support/support.component';
     DeletePostComponent,
     AlertComponent,
     ProfileComponent,
-    JobComponent,
-    MaterialsComponent,
-    CourseComponent,
     SupportComponent
   ],
   imports: [

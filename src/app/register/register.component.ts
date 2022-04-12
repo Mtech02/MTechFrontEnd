@@ -15,7 +15,9 @@ export class RegisterComponent implements OnInit {
   userName: UserLogin = new UserLogin;
   confirmPassword: string;
   typeUsers: string;
-
+  tipo = 'normal';
+  code = '1234';
+  confirmaType: string;
   constructor(
     private authService:AuthService,
     private router: Router,
@@ -34,6 +36,12 @@ export class RegisterComponent implements OnInit {
 
   }
 
+  confirmeType(event:any){
+
+    this.confirmaType = event.target.value;
+
+  }
+
   typeUser(event:any){
 
     this.typeUsers = event.target.value;
@@ -42,7 +50,13 @@ export class RegisterComponent implements OnInit {
 
   register(){
 
-    this.user.type = this.typeUsers;
+    if (this.typeUsers == this.tipo) {
+      this.user.type = this.typeUsers
+    } else if (this.confirmaType == this.code) {
+      this.user.type = this.typeUsers
+    } else {
+      alert('codigo invalido!')
+    }
 
     if(this.user.password != this.confirmPassword){
 
@@ -60,20 +74,6 @@ export class RegisterComponent implements OnInit {
       });
 
     }
-
-  }
-
-  userTypeAdm(){
-
-    let ok = false
-
-    if(this.typeUsers == 'adm'){
-
-      ok = true;
-
-    }
-
-    return ok
 
   }
 
